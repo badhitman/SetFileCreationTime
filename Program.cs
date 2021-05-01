@@ -6,6 +6,7 @@ namespace SetFileCreationTime
 {
     class Program
     {
+        static DateTime RndDateTime => start.AddDays(gen.Next(365, range)).AddHours(gen.Next(1, 20)).AddMinutes(gen.Next(60, 500)).AddSeconds(gen.Next(60, 500));
         static Random gen = new Random();
         static readonly DateTime start = new DateTime(2005, 1, 1);
         static readonly int range = (DateTime.Today - start).Days;
@@ -47,7 +48,5 @@ namespace SetFileCreationTime
                 return (c_rnd_dt, w_rnd_dt, r_rnd_dt);
             }
         }
-
-        static DateTime RndDateTime => start.AddDays(gen.Next(365, range)).AddHours(gen.Next(1, 20)).AddMinutes(gen.Next(60, 500)).AddSeconds(gen.Next(60, 500));
     }
 }
